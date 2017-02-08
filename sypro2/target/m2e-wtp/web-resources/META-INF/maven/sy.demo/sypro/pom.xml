@@ -10,7 +10,7 @@
 	<url>http://maven.apache.org</url>
 	
 	
-	<dependencies>
+	<dependencies>       <!--测试 sourceTree-->
 	
 		<!-- 加入spring mvc依赖包 -->
 		<dependency>
