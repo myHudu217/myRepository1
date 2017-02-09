@@ -34,7 +34,7 @@
 		<form id="form" method="post">
 			<table class="table table-hover table-condensed">
 				<tr>
-					<th>编号33</th>
+					<th>编号</th>
 					<td><input name="id" type="text" class="span2" value="${user.id}" readonly="readonly"></td>
 					<th>登录名称</th>
 					<td><input name="name" type="text" placeholder="请输入登录名称" class="easyui-validatebox span2" data-options="required:true" value=""></td>

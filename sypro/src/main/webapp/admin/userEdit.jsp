@@ -27,30 +27,14 @@
 				}
 			}
 		});
-		
-		
-		 var user='${user}';
-		 var user_id='${user.id}';
-		 var user_name='${user.name}';
-		console.log("%o",user); 
-		console.log("%o",user_id); 
-		console.log("%o",user_name); 
 	});
 </script>
 <div class="easyui-layout" data-options="fit:true,border:false">
 	<div data-options="region:'center',border:false" title="" style="overflow: hidden;">
-	
-	${user}<br/>
-	${user.id}<br/>
-	${user.name}<br/>
-	${user.roleIds}<br/>
-	${user.roleNames}<br/>
-	${user.createdatetime}<br/>
-	
 		<form id="form" method="post">
 			<table class="table table-hover table-condensed">
 				<tr>
-					<th>编号44</th>
+					<th>编号</th>
 					<td><input name="id" type="text" class="span2" value="${user.id}" readonly="readonly"></td>
 					<th>登录名称</th>
 					<td><input name="name" type="text" placeholder="请输入登录名称" class="easyui-validatebox span2" data-options="required:true" value="${user.name}"></td>

@@ -4,11 +4,9 @@
 	var layout_west_tree;
 	var layout_west_tree_url = '';
 	var sessionInfo_userId = '${sessionInfo.id}';
-	
 	if (sessionInfo_userId) {
 		layout_west_tree_url = '${pageContext.request.contextPath}/resourceController/tree';
 	}
-	
 	$(function() {
 		layout_west_tree = $('#layout_west_tree').tree({
 			url : layout_west_tree_url,
@@ -69,7 +67,7 @@
 	}
 </script>
 <div class="easyui-accordion" data-options="fit:true,border:false">
-	<div title="系统菜单444" style="padding: 5px;" data-options="border:false,isonCls:'anchor',tools : [ {
+	<div title="系统菜单" style="padding: 5px;" data-options="border:false,isonCls:'anchor',tools : [ {
 				iconCls : 'database_refresh',
 				handler : function() {
 					$('#layout_west_tree').tree('reload');
