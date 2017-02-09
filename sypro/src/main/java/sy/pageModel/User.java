@@ -2,18 +2,11 @@ package sy.pageModel;
 
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.stereotype.Component;
-
-
-@Component
 public class User implements java.io.Serializable {
 
 	private String id;
 	private String name;
 	private String pwd;
-	//hb add
-	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdatetime;
 	private Date modifydatetime;
 
@@ -24,18 +17,6 @@ public class User implements java.io.Serializable {
 
 	private String roleIds;
 	private String roleNames;
-
-	
-	private String regDate;
-	
-	
-	public String getRegDate() {
-		return regDate;
-	}
-
-	public void setRegDate(String regDate) {
-		this.regDate = regDate;
-	}
 
 	public Date getCreatedatetimeStart() {
 		return createdatetimeStart;

@@ -74,7 +74,7 @@ public class InitServiceImpl implements InitServiceI {
 
 		Tresource xtgl = new Tresource();
 		xtgl.setId("xtgl");
-		xtgl.setName("系统管理2");
+		xtgl.setName("系统管理");
 		xtgl.setTresourcetype(menuType);
 		xtgl.setSeq(0);
 		xtgl.setIcon("plugin");
