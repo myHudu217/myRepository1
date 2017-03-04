@@ -1,5 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <script type="text/javascript" charset="utf-8">
 	/**
 	 * @author 孙宇
@@ -94,12 +96,21 @@
 		});
 	}
 </script>
+
+
 <div id="sessionInfoDiv" style="position: absolute; right: 0px; top: 0px;" class="alert alert-info">
 	<c:if test="${sessionInfo.id != null}">[<strong>${sessionInfo.name}</strong>]，欢迎你！您使用[<strong>${sessionInfo.ip}</strong>]IP登录！</c:if>
 </div>
+
+
 <div style="position: absolute; right: 0px; bottom: 0px;">
-	<a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_pfMenu',iconCls:'cog'">更换皮肤</a> <a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_kzmbMenu',iconCls:'cog'">控制面板</a> <a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_zxMenu',iconCls:'cog'">注销</a>
+    <!-- 根据#id 去找 对应的 div模块  hbadd -->
+	<a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_pfMenu',iconCls:'cog'">更换皮肤</a> 
+	<a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_kzmbMenu',iconCls:'cog'">控制面板</a> 
+	<a href="javascript:void(0);" class="easyui-menubutton" data-options="menu:'#layout_north_zxMenu',iconCls:'cog'">注销</a>
 </div>
+
+
 <div id="layout_north_pfMenu" style="width: 120px; display: none;">
 	<div onclick="changeThemeFun('default');" title="default">default</div>
 	<div onclick="changeThemeFun('gray');" title="gray">gray</div>
@@ -118,6 +129,8 @@
 	<div onclick="changeThemeFun('metro-orange');" title="metro-orange">metro-orange</div>
 	<div onclick="changeThemeFun('metro-red');" title="metro-red">metro-red</div>
 </div>
+
+
 <div id="layout_north_kzmbMenu" style="width: 100px; display: none;">
 	<div onclick="editCurrentUserPwd();">修改密码</div>
 	<div class="menu-sep"></div>
@@ -125,6 +138,8 @@
 	<div class="menu-sep"></div>
 	<div onclick="currentUserResource();">我的权限</div>
 </div>
+
+
 <div id="layout_north_zxMenu" style="width: 100px; display: none;">
 	<div onclick="logoutFun();">锁定窗口</div>
 	<div class="menu-sep"></div>
