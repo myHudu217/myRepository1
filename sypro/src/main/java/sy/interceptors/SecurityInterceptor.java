@@ -23,6 +23,16 @@ public class SecurityInterceptor implements HandlerInterceptor {
 	private static final Logger logger = Logger.getLogger(SecurityInterceptor.class);
 
 	private List<String> excludeUrls;// 不需要拦截的资源
+	private List<String> excludeUrls2;// 不需要拦截的资源2 ; 测试 此 变量 是怎么来的  : 是从  mvc:interceptor 标签 中  子标签 property标签中读取的 name 属性值
+	
+
+	public List<String> getExcludeUrls2() {
+		return excludeUrls2;
+	}
+
+	public void setExcludeUrls2(List<String> excludeUrls2) {
+		this.excludeUrls2 = excludeUrls2;
+	}
 
 	public List<String> getExcludeUrls() {
 		return excludeUrls;
@@ -37,6 +47,8 @@ public class SecurityInterceptor implements HandlerInterceptor {
 	 */
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object object, Exception exception) throws Exception {
+		
+		logger.info("===============================afterCompletion方法===============================");
 
 	}
 
@@ -45,6 +57,8 @@ public class SecurityInterceptor implements HandlerInterceptor {
 	 */
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object object, ModelAndView modelAndView) throws Exception {
+		
+		logger.info("===============================postHandle方法===============================");
 
 	}
 
@@ -53,6 +67,8 @@ public class SecurityInterceptor implements HandlerInterceptor {
 	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
+
+		logger.info("===============================preHandle方法=======start========================");
 		String requestUri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String url = requestUri.substring(contextPath.length());
@@ -74,6 +90,7 @@ public class SecurityInterceptor implements HandlerInterceptor {
 			request.getRequestDispatcher("/error/noSecurity.jsp").forward(request, response);
 			return false;
 		}
+		logger.info("===============================preHandle方法=======end========================");
 
 		return true;
 	}

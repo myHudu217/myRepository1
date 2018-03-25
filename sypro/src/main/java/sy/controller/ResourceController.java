@@ -46,6 +46,8 @@ public class ResourceController extends BaseController {
 	@RequestMapping("/tree")
 	@ResponseBody
 	public List<Tree> tree(HttpSession session) {
+		String sessionInfoName=ConfigUtil.getSessionInfoName();
+		SessionInfo sessionInfoVo=(SessionInfo) session.getAttribute(sessionInfoName);
 		SessionInfo sessionInfo = (SessionInfo) session.getAttribute(ConfigUtil.getSessionInfoName());
 		 List<Tree> treeList= resourceService.tree(sessionInfo);
 		return treeList;
