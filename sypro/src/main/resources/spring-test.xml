@@ -26,10 +26,30 @@
 							http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 	
-	 <!-- 首相要实例化目标对象类和切面类 -->
-     <bean id="chinese" class="com.itnba.test.Chinese"></bean>
-     <bean id="american" class="com.itnba.test.American"></bean>
-     <bean id="qiemian" class="com.itnba.test.Qiemian"></bean>
+	 <!-- 1首先: 要实例化目标对象类和切面类 -->
+     <bean id="chinese" class="sy.demo.Chinese"></bean>
+
+     <bean id="american" class="sy.demo.American"></bean>
+
+     <bean id="qiemian" class=" sy.demo.Qiemian"></bean>
+
+
+
+	<aop:config>
+        <!-- 要切入的对象 -->                 
+        <aop:pointcut expression="execution(* sy.demo.*.chifan(..))" id="chifan" />
+        <aop:pointcut expression="execution(* sy.demo.*.shuijiao(..))" id="shuijiao" />
+        <!-- 切入点 -->
+        <aop:aspect id="ha" ref="qiemian"><!-- 切面类  -->
+	            <!--  <aop:之前before、之后after... method="切面类中的方法" pointcut-ref="上面的切入的对象"/>  -->
+	            
+	            <aop:before method="chifanqian_Qiemian()" pointcut-ref="chifan"/><!-- 之前通知 -->
+	            <aop:after method="chifanhou_Qiemian()" pointcut-ref="chifan"/><!-- 之后通知 -->
+	            
+	            <aop:before method="shuijiaoqian_Qiemian()" pointcut-ref="shuijiao"/>
+            
+        </aop:aspect>
+    </aop:config>
 	
 	
 	
